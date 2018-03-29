@@ -1,0 +1,189 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.shenhesoft.driver.fragment.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <include layout="@layout/head_title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_item_dispatch"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_banner" />
+
+        <TextView
+            android:id="@+id/message_remind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="欢迎来到司机助手!"
+            android:textSize="18sp" />
+
+        <com.shenhesoft.driver.view.TWaveView
+            android:id="@+id/waveView"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_gravity="bottom" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/task_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/ic_task" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="任务平台"
+                android:textColor="@color/gray" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:id="@+id/layout_upload_sendgoods"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_item_task"
+            android:clickable="true"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_upload_sendgoods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/ic_upload_sendgoods" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_upload_sendgoods"
+                android:gravity="center_horizontal"
+                android:text="发货上传"
+                android:textColor="@color/gray" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_notice_goodsarrive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/text_size_12"
+            android:layout_weight="1"
+            android:background="@drawable/bg_item_dispatch"
+            android:clickable="true"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_notice_goodsarrive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/ic_arrive_notice" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_notice_goodsarrive"
+                android:gravity="center_horizontal"
+                android:text="到货通知"
+                android:textColor="@color/gray" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_upload_downgoods"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/text_size_12"
+            android:layout_weight="1"
+            android:background="@drawable/bg_item_confirm_charging"
+            android:clickable="true"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_upload_downgoods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/ic_upload_unloadinggoods" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_upload_downgoods"
+                android:gravity="center_horizontal"
+                android:text="卸货上传"
+                android:textColor="@color/gray" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/bg_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/ic_rectangle" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="路况信息"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+
+</LinearLayout>

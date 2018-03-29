@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">司机助手</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">密码不能为空</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">用户名不能为空</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+
+    <string name="wait_shipments_fahpz">发货皮重：</string>
+    <string name="wait_shipments_fahmz">发货毛重：</string>
+    <string name="wait_shipments_fahjz1">发货净重：</string>
+    <string name="wait_shipments_fahjz2">发货净重：</string>
+    <string name="wait_shipments_huayzb">化验指标：</string>
+    <string name="wait_shipments_yundsc">运单上传</string>
+    <string name="wait_shipments_fahydsc">发货运单上传：</string>
+
+
+    <string name="wait_shipments_chengyxx">承运信息</string>
+    <string name="wait_shipments_arrive_hpz">到货皮重：</string>
+    <string name="wait_shipments_arrive_hmz">到货毛重：</string>
+    <string name="wait_shipments_arrive_hjz1">到货净重：</string>
+    <string name="wait_shipments_arrive_hjz2">到货净重：</string>
+    <string name="wait_shipments_arrive_yundsc">运单上传</string>
+    <string name="wait_shipments_arrive_hydsc">到货运单上传：</string>
+
+    <string name="new_order_feiyxx">费用信息</string>
+    <string name="new_order_yunfdj">运费单价：</string>
+    <string name="new_order_jiffs">计费方式：</string>
+    <string name="new_order_yunfbt">运费补贴：</string>
+
+
+    <string name="project_no">项目编号:</string>
+    <string name="deafult_text">J12345678</string>
+    <string name="execution_status">执行状态</string>
+    <string name="contact_person">联系调度员</string>
+    <string name="cancel_execution">取消执行</string>
+    <string name="take_good_addr">取货地</string>
+    <string name="arrived_tv">运抵地</string>
+    <string name="default_city">测试省测试市</string>
+    <string name="project_data">项目资料</string>
+    <string name="goods_name">货物名称:</string>
+    <string name="transport_price">运输费用:</string>
+    <string name="loss_price">折扣单价:</string>
+    <string name="goods_spec">规格:</string>
+    <string name="loss_proportion">折扣系数:</string>
+    <string name="cancel_task">取消任务</string>
+    <string name="cancel_reason">取消原因:</string>
+    <string name="choose_reason">点击选择取消原因</string>
+    <string name="reason_details">详细原因:</string>
+    <string name="details_reason">点击填写详细原因</string>
+    <string name="cancel">取消</string>
+    <string name="OK">确定</string>
+    <string name="demo_reason">原因1</string>
+
+
+    <string name="entet_phone_number">请输入注册时使用的手机号</string>
+    <string name="enter_verification_code">请输入收到的验证码</string>
+    <string name="get_verification_code">获取验证码</string>
+    <string name="enter_new_password">请输入新密码</string>
+    <string name="enter_new_password_again">请再次输入新密码</string>
+    <string name="reset_password">重置密码</string>
+    <string name="hundredweight">T</string>
+
+</resources>

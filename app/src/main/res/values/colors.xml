@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorHomeTabTextBlue">#00b4ff</color>
+    <color name="colorHomeTabTextGray">#CCCCCC</color>
+    <color name="white">#ffffff</color>
+    <color name="blue">#03a8ee</color>
+    <color name="gray">#7f7f7f</color>
+    <color name="black">#000000</color>
+    <color name="bg_gray">#eeeeee</color>
+    <color name="orange">#ffae00</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="tran_orange">#CCffae00</color>
+    <color name="line_color">#cccccc</color>
+    <color name="line_bg_color">#EEEEEE</color>
+    <color name="main_bg">#EEEEEE</color>
+    <color name="text_gray1">#333333</color>
+    <color name="text_gray2">#666666</color>
+    <color name="text_gray3">#999999</color>
+    <color name="black_80">#33000000</color>
+    <color name="white_20">#99FFFFFF</color>
+    <color name="white_80">#33FFFFFF</color>
+    <color name="white_100">#00FFFFFF</color>
+
+    <color name="rb_tv_gray">#9ca6ab</color>
+    <color name="rb_tv_blue">#03a8ed</color>
+    <color name="bg_edittext">#f8f7f6</color>
+
+</resources>

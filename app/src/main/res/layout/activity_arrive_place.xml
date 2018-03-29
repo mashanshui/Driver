@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.shenhesoft.driver.activity.ArrivePlaceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/new_order_root_tv_style"
+                android:drawableLeft="@mipmap/icon_yundsc"
+                android:text="收发货信息" />
+
+            <!-- ===发货皮重=== -->
+            <LinearLayout style="@style/new_order_child_layout_style">
+
+                <TextView
+                    style="@style/new_order_child_tv_style"
+                    android:text="取货地：" />
+
+                <TextView
+                    android:id="@+id/arrive_et_quhd"
+                    style="@style/new_order_child_et_style"
+                    android:inputType="numberDecimal"
+                    android:text="" />
+
+            </LinearLayout>
+            <!-- ===发货皮重=== -->
+            <LinearLayout style="@style/new_order_child_layout_style">
+
+                <TextView
+                    style="@style/new_order_child_tv_style"
+                    android:text="取货地址：" />
+
+                <TextView
+                    android:id="@+id/arrive_et_quhdz"
+                    style="@style/new_order_child_et_style"
+                    android:inputType="numberDecimal"
+                    android:text="" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout style="@style/new_order_child_layout_style">
+
+                <TextView
+                    style="@style/new_order_child_tv_style"
+                    android:text="运抵地：" />
+
+                <TextView
+                    android:id="@+id/arrive_et_yundd"
+                    style="@style/new_order_child_et_style"
+                    android:inputType="numberDecimal"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/new_order_child_layout_style">
+
+                <TextView
+                    style="@style/new_order_child_tv_style"
+                    android:text="运抵地址：" />
+
+                <TextView
+                    android:id="@+id/arrive_et_yunddz"
+                    style="@style/new_order_child_et_style"
+                    android:inputType="numberDecimal"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/fayxx_tv_clean"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="取消"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/fayxx_tv_ok"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="确认抵达"
+            android:textColor="#ffae00"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>
