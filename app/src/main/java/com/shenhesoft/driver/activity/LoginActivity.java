@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
         setHintBar(this);
 
         mImg_Background = findViewById(R.id.de_img_backgroud);

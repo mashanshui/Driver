@@ -1,12 +1,16 @@
 package com.shenhesoft.driver.activity;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.shenhesoft.driver.AppConstant;
 import com.shenhesoft.driver.Constants;
@@ -60,6 +64,8 @@ public class SplashActivity extends AppCompatActivity implements EasyPermissions
     }
 
     private void initView() {
+        TextView textView = (TextView) findViewById(R.id.versionName);
+        textView.setText(packageName(this));
         checkPermission();
     }
 
@@ -155,5 +161,23 @@ public class SplashActivity extends AppCompatActivity implements EasyPermissions
     @Override
     public void onPermissionsDenied(int requestCode, List<String> perms) {
         startLogin();
+    }
+
+    /**
+     * 获取版本号
+     *
+     * @return 当前应用的版本号
+     */
+    public static String packageName(Context context) {
+        PackageManager manager = context.getPackageManager();
+        String name = null;
+        try {
+            PackageInfo info = manager.getPackageInfo(context.getPackageName(), 0);
+            name = info.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return name;
     }
 }
