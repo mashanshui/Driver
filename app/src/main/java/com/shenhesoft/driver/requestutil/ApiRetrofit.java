@@ -60,6 +60,7 @@ public class ApiRetrofit {
     public Map<String, Object> updateLocation(String lat, String lon, String position, String remark) {
         Map<String, Object> params = new HashMap<>();
 //        {carId: "AKJK547货位", lon: "116.398258", lat: "39.9146", position: "北京西站", remark: "备注"}
+        params.put("updateUserId", getUserID());
         params.put("carId", getUserID());
         params.put("lon", lon);
         params.put("lat", lat);

@@ -163,7 +163,7 @@
                         <TextView
                             android:id="@+id/containerNumber1"
                             style="@style/new_order_child_tv_style"
-                            android:text="集装箱1" />
+                            android:text="" />
 
                         <TextView
                             android:id="@+id/textView"
@@ -194,7 +194,7 @@
                         <TextView
                             android:id="@+id/containerNumber2"
                             style="@style/new_order_child_tv_style"
-                            android:text="集装箱2" />
+                            android:text="" />
 
                         <TextView
                             style="@style/new_order_child_tv_style"

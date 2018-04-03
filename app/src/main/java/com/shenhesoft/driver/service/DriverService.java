@@ -119,7 +119,7 @@ public class DriverService extends Service {
     private void submit(String lat, String lon,String position) {
 
         Observable<RequestResults> observable = HttpManager.getInstance().getUserService()
-                .updatelocation(ApiRetrofit.getInstance().updateLocation(lat, lon, position, "啦啦啦~"));
+                .updatelocation(ApiRetrofit.getInstance().updateLocation(lat, lon, position, "后台上报"));
 
         HttpObserver<RequestResults> observer = new HttpObserver<>(this,
                 data -> {

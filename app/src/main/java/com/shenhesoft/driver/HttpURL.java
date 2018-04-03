@@ -10,7 +10,7 @@ public class HttpURL {
     //测试IP 石吕飞
 //    public static final String IP = "http://192.168.2.232:8088/logistics-carmanage-web";
 //    public static final String IP = "http://192.168.2.182:8088/logistics-carmanage-web";
-//    //测试IP
+//    //外网IP
     public static final String IP = "http://139.196.100.149:8081/logistics-carmanage-web";
 //    public static final String IP = "http://139.196.100.149:7012/logistics-carmanage-web";
 

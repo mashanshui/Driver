@@ -41,6 +41,7 @@ import com.shenhesoft.driver.requestutil.HttpManager;
 import com.shenhesoft.driver.requestutil.HttpObserver;
 import com.shenhesoft.driver.requestutil.entity.RequestResults;
 import com.shenhesoft.driver.utils.AppUtil;
+import com.shenhesoft.driver.utils.DialogUtil;
 import com.shenhesoft.driver.utils.IToast;
 import com.shenhesoft.driver.utils.cache.SharedPref;
 import com.shenhesoft.driver.view.ClearWriteEditText;
@@ -432,7 +433,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         Observable<RequestResults<UserinfoBean>> observable = HttpManager.getInstance().getUserService()
                 .userLogin(ApiRetrofit.getInstance().login(username, password));
 
-        HttpObserver<RequestResults<UserinfoBean>> observer = new HttpObserver<>(this,
+        HttpObserver<RequestResults<UserinfoBean>> observer = new HttpObserver<>(this, DialogUtil.createLoading(this),
 
                 data -> {
                     if (data.getState() != 1) {

@@ -115,7 +115,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 //                    mMessageRemind.setText("到货信息未上传，请及时上传，状态异常！");
 //                break;
     private void updateStatus(String status) {
-
         switch (status) {
             case "0":
                 setStatus("欢迎来到司机助手!", status);

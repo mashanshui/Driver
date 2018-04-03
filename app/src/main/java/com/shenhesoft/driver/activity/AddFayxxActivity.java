@@ -313,7 +313,7 @@ public class AddFayxxActivity extends TakePhotoActivity {
                 IToast.showShort("请填入第1个集装箱发货净重");
                 return false;
             }
-            if (fhjz2.isEmpty()) {
+            if (fhjz2.isEmpty() && !TextUtils.isEmpty(mContainerNumber2.getText().toString())) {
                 IToast.showShort("请填入第2个集装箱发货净重");
                 return false;
             }
