@@ -26,6 +26,9 @@ import com.shenhesoft.driver.utils.IToast;
 import com.shenhesoft.driver.utils.cache.SharedPref;
 import com.umeng.message.PushAgent;
 import com.umeng.message.UTrack;
+import com.umeng.message.UmengNotifyClickActivity;
+
+import org.android.agoo.xiaomi.MiPushBroadcastReceiver;
 
 import java.util.List;
 import java.util.Set;
@@ -33,7 +36,7 @@ import java.util.Set;
 import io.reactivex.Observable;
 import pub.devrel.easypermissions.EasyPermissions;
 
-public class SplashActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks{
+public class SplashActivity extends UmengNotifyClickActivity implements EasyPermissions.PermissionCallbacks{
     private static final String TAG = "SplashActivity";
     private int CALL_PHONE_REQUEST_CODE = 1001;
     private String userName;
@@ -51,11 +54,14 @@ public class SplashActivity extends AppCompatActivity implements EasyPermissions
                 String value = bun.getString(key);
                 Log.e(TAG, "onCreate: "+key+value );
             }
-
         }
         initView();
     }
 
+    @Override
+    public void onMessage(Intent intent) {
+        super.onMessage(intent);
+    }
 
     @Override
     protected void onNewIntent(Intent intent) {

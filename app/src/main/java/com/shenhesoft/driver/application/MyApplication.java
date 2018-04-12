@@ -23,6 +23,9 @@ import com.umeng.message.UmengMessageHandler;
 import com.umeng.message.UmengNotificationClickHandler;
 import com.umeng.message.entity.UMessage;
 
+import org.android.agoo.huawei.HuaWeiRegister;
+import org.android.agoo.xiaomi.MiPushRegistar;
+
 import java.util.Map;
 
 import io.rong.imkit.RongIM;
@@ -64,6 +67,8 @@ public class MyApplication extends MultiDexApplication {
 
     private void initUmengPush() {
         UMConfigure.init(context, UMConfigure.DEVICE_TYPE_PHONE, "c8f03d9333fa9c0d3f2bee7235b8b481");
+        MiPushRegistar.register(context, "2882303761517763271", "5401776392271");
+        HuaWeiRegister.register(context);
         PushAgent mPushAgent = PushAgent.getInstance(context);
         //注册推送服务，每次调用register方法都会回调该接口
         mPushAgent.register(new IUmengRegisterCallback() {
