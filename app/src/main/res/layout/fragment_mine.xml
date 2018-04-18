@@ -220,7 +220,7 @@
             <ImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                android:src="@mipmap/icon_car_info" />
+                android:src="@mipmap/car_info" />
 
             <TextView
                 android:layout_width="0.0dip"
