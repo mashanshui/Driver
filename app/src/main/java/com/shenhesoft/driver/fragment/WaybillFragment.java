@@ -29,16 +29,18 @@ import butterknife.ButterKnife;
 public class WaybillFragment extends Fragment {
     public final static String BILL_STATUS_ALL = "0"; //全部
     public final static String BILL_STATUS_TO_RECONCILED = "4"; //待对账
-    public final static String BILL_STATUS_TO_SETTLED = "5"; //待结算
-    public final static String BILL_STATUS_AlREADY_SETTLED = "6"; //已结算
+    public final static String BILL_STATUS_TO_SETTLED = "6"; //待结算
+    public final static String BILL_STATUS_AlREADY_SETTLED = "7"; //已结算
     @BindView(R.id.tab_mybills)
     PagerSlidingTabStrip tab;
     @BindView(R.id.vp_mybills)
     ViewPager viewPager;
     @BindView(R.id.title)
     TextView titleTv;
-    String[] titles = new String[]{"全部", "待对账", "待结算","已结算"};
-    private ArrayList<Fragment> fragmentList = new ArrayList<>(4);
+    //    String[] titles = new String[]{"全部", "待对账", "待结算","已结算"};
+//    private ArrayList<Fragment> fragmentList = new ArrayList<>(4);
+    String[] titles = new String[]{"待对账", "待结算", "已结算"};
+    private ArrayList<Fragment> fragmentList = new ArrayList<>(2);
 
     public WaybillFragment() {
         // Required empty public constructor
@@ -62,8 +64,13 @@ public class WaybillFragment extends Fragment {
     }
 
     private void initData() {
-        if (fragmentList.size() < 4) {
-            fragmentList.add(AllBillsFragment.newInstance(BILL_STATUS_ALL));
+//        if (fragmentList.size() < 4) {
+//            fragmentList.add(AllBillsFragment.newInstance(BILL_STATUS_ALL));
+//            fragmentList.add(AllBillsFragment.newInstance(BILL_STATUS_TO_RECONCILED));
+//            fragmentList.add(AllBillsFragment.newInstance(BILL_STATUS_TO_SETTLED));
+//            fragmentList.add(AllBillsFragment.newInstance(BILL_STATUS_AlREADY_SETTLED));
+//        }
+        if (fragmentList.size() < 3) {
             fragmentList.add(AllBillsFragment.newInstance(BILL_STATUS_TO_RECONCILED));
             fragmentList.add(AllBillsFragment.newInstance(BILL_STATUS_TO_SETTLED));
             fragmentList.add(AllBillsFragment.newInstance(BILL_STATUS_AlREADY_SETTLED));

@@ -1,6 +1,7 @@
 package com.shenhesoft.driver.activity.task;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ExpandableListView;
 
 import com.shenhesoft.driver.R;
@@ -52,21 +53,14 @@ public class WayBillDetailActivity extends BaseActivity {
 
     private List<PDetailsRootItem> createtListData(MyOrderBean bean) {
         rootItems = new ArrayList<>();
-//        项目类型（0 集装箱 1 散装） projectType
-
-        if (bean.getProjectType().equals("0")) {
-            bean.setProjectType("集装箱");
-        } else if (bean.getProjectType().equals("1")) {
-            bean.setProjectType("散装");
-        }
 //        运单状态
-        if (bean.getStatus().equals("4")) {
+        if (bean.getStatus().equals("5")) {
             bean.setStatus("货位引导");
             createData1(bean);
-        } else if (bean.getStatus().equals("5")) {
+        } else if (bean.getStatus().equals("6")) {
             bean.setStatus("等待回单");
             createData2(bean);
-        } else if (bean.getStatus().equals("6")) {
+        } else if (bean.getStatus().equals("7")) {
             bean.setStatus("等待确认");
             createData2(bean);
         }
@@ -74,12 +68,19 @@ public class WayBillDetailActivity extends BaseActivity {
     }
 
     private void createData1(MyOrderBean bean) {
+        //        项目类型（0 集装箱 1 散装） projectType
+        if (bean.getProjectType().equals("0")) {
+            bean.setProjectType("集装箱");
+        } else if (bean.getProjectType().equals("1")) {
+            bean.setProjectType("散装");
+        }
+
         PDetailsRootItem item1 = new PDetailsRootItem("项目信息", R.drawable.icon_xiangmxx);
         item1.setChildItems(PDetailsRootItem.createChilds(
                 new String[]{"项目编号：", "项目类型：", "发货企业", "收货企业", "分支机构：", "调度员：",
                         "创建时间：", "运单状态：", "更新时间："},
-                new String[]{bean.getProjectCode(), bean.getProjectType(), bean.getSendCompany(), bean.getReceiptCompany(), bean.getBranchGroupName(), bean.getUserDispatchName(), bean.getCreateDate(),
-                        bean.getStatus(), bean.getUpdateDate()}
+                new String[]{bean.getProjectCode(), bean.getProjectType(), bean.getSendCompany(), bean.getReceiptCompany(), bean.getBranchGroupName()
+                        , bean.getUserDispatchName(), bean.getCreateDate(), bean.getStatus(), bean.getUpdateDate()}
         ));
         rootItems.add(item1);
 
@@ -111,50 +112,54 @@ public class WayBillDetailActivity extends BaseActivity {
         item5.setChildItems(PDetailsRootItem.createChilds(
                 new String[]{"发货单位：", "取货地址：", "发货毛重：", "发货皮重：", "发货净重：", "发货净重：",
                         "收货单位：", "运抵地址：", "货场：", "货位：", "到货毛重：", "到货皮重：", "到货净重：",
-                        "到货净重：", "损耗重量："},
+                        "到货净重："},
                 new String[]{bean.getSendCompany(), bean.getPickupPlace(), bean.getSendGross(), bean.getSendTare(),
                         bean.getContainerOneSendNet(), bean.getContainerTwoSendNet(),
-                        bean.getReceiptCompany(), bean.getReceiptCompany(), bean.getArrivePlace(), bean.getArriveFreightYrad(),
-                        bean.getArriveFreightSite(), bean.getReceiptGross(), bean.getReceiptTare(),
+                        bean.getReceiptCompany(),  bean.getArrivePlace(), bean.getDistributionCargoPlace(),
+                        bean.getDistributionCargoSite(), bean.getReceiptGross(), bean.getReceiptTare(),
                         bean.getContainerOneReceiptNet(), bean.getContainerTwoReceiptNet()}
         ));
+        Log.e(TAG, "createData1:----------- "+ bean.getSendGross()+bean.getSendTare());
         rootItems.add(item5);
 
-        PDetailsRootItem item6 = new PDetailsRootItem("运费信息", R.drawable.icon_chelxx);
-        item3.setChildItems(PDetailsRootItem.createChilds(
-                new String[]{"运费单价：", "计费重量：", "计费件数：", "是否破损：", "扣损单价", "扣损金额", "运费补贴", "运费核计"},
-                new String[]{bean.getCarPlateNumber(), bean.getCarType(), bean.getDriverName(), bean.getDriverPhone()}
-        ));
-        rootItems.add(item3);
     }
 
     private void createData2(MyOrderBean bean) {
         PDetailsRootItem item1 = new PDetailsRootItem("项目信息", R.drawable.icon_xiangmxx);
         item1.setChildItems(PDetailsRootItem.createChilds(
-                new String[]{"项目编号：", "项目类型：", "发货企业", "收货企业", "分支机构：", "调度员：",
-                        "创建时间：", "运单状态：", "更新时间："},
-                new String[]{bean.getProjectCode(), bean.getProjectType(), bean.getSendCompany(), bean.getReceiptCompany(), bean.getBranchGroupName(), bean.getUserDispatchName(), bean.getCreateDate(),
-                        bean.getStatus(), bean.getUpdateDate()}
+                new String[]{"项目编号：", "货物品名：", "发货单位", "收货单位", "运输费用：", "扣损系数：",
+                        "扣损金额：", "对账时间：", "结算时间：", "油气卡领取时间："},
+                new String[]{bean.getProjectCode(), bean.getCargoName(), bean.getSendCompany(), bean.getReceiptCompany(), bean.getShortBargeCost()
+                        , bean.getDeductionRate(), bean.getDeductionPrice(), bean.getCheckingAuditDate()
+                        , bean.getSettleAuditDate(), bean.getSuppliesExecuteDate()}
         ));
         rootItems.add(item1);
 
         PDetailsRootItem item2 = new PDetailsRootItem("对账信息", R.drawable.icon_jizxxx);
         item2.setChildItems(PDetailsRootItem.createChilds(
-                new String[]{"货物名称：", "货物规格：", "化验指标："},
-                new String[]{bean.getCargoName(), bean.getSpecifications(), bean.getTestIndicators()}
+                new String[]{"打包车次：", "打包车辆：", "合计运费：", "收入现金：", "收入油气：", "收款人："
+                        , "支付方式：", "油气卡领取人：", "领取方式："},
+                new String[]{bean.getPackTruckDegree(), bean.getPackTruckNum(), bean.getFreightChargeAmount(), bean.getCashAmount(),bean.getSuppliesAmount()
+                        , bean.getReceiveUserName(), bean.getCashPayType(), bean.getReceiveUserName(), bean.getSuppliesReceiveType()}
         ));
         rootItems.add(item2);
 
-
-//        //遍历数组，显示所有对账单
-//        for (int i = 0; i < 10; i++) {
-//            int num = i++;
-//            PDetailsRootItem item = new PDetailsRootItem("对账详情" + num, R.drawable.icon_chelxx);
-//            item.setChildItems(PDetailsRootItem.createChilds(
-//                    new String[]{"运单号：", "运输时间：", "运输费用：", "运费补贴：", "扣损金额", "运费核计"},
-//                    new String[]{bean.getCarPlateNumber(), bean.getCarType(), bean.getDriverName(), bean.getDriverPhone()}
-//            ));
-//            rootItems.add(item);
-//        }
+        //遍历数组，显示所有对账单
+        int num = 0;
+        List<MyOrderBean.ShortOrderFinancesBean> financesBeanList = bean.getShortOrderFinances();
+        if (financesBeanList==null || financesBeanList.isEmpty()) {
+            return;
+        }
+        for (int i = 0; i < financesBeanList.size(); i++) {
+            num++;
+            MyOrderBean.ShortOrderFinancesBean financesBean = financesBeanList.get(i);
+            PDetailsRootItem item = new PDetailsRootItem("对账详情" + num, R.drawable.icon_chelxx);
+            item.setChildItems(PDetailsRootItem.createChilds(
+                    new String[]{"运单号：", "运输时间：", "运输费用：", "运费补贴：", "扣损金额：", "运费核计："},
+                    new String[]{financesBean.getOrderCodeX(), financesBean.getOrderCreateDate(), financesBean.getFShortBargeCost()
+                            , financesBean.getFSubsidy(), financesBean.getBuckleFigure(), financesBean.getShouldPayFigure()}
+            ));
+            rootItems.add(item);
+        }
     }
 }

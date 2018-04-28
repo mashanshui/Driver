@@ -1,9 +1,11 @@
 package com.shenhesoft.driver.requestutil;
 
 
+import android.app.Application;
 import android.util.Log;
 
 import com.shenhesoft.driver.AppConstant;
+import com.shenhesoft.driver.activity.LoginActivity;
 import com.shenhesoft.driver.application.MyApplication;
 import com.shenhesoft.driver.utils.AppUtil;
 import com.shenhesoft.driver.utils.cache.SharedPref;
@@ -191,6 +193,30 @@ public class ApiRetrofit {
         return params;
     }
 
+    /**
+     * 司机上传路况信息
+     * @return
+     */
+    public Map<String, Object> uploadLoadCondition(String driverMsg) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("driverId", getUserID());
+        params.put("driverMsg", driverMsg);
+        params.put("driverName", SharedPref.getInstance(MyApplication.getContext()).getString(AppConstant.UserName, ""));
+        ShowLog(params);
+        return params;
+    }
+
+    /**
+     * 司机获取路况信息
+     * @return
+     */
+    public Map<String, Object> getLoadCondition(int start) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("start", String.valueOf(start));
+        params.put("length", "10");
+        ShowLog(params);
+        return params;
+    }
 
     /**
      * 通过运单状态获取运单信息

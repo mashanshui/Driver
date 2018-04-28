@@ -169,6 +169,7 @@ public class TaskALLFragment extends BaseFragment implements TaskAdapter.cancelC
                 data -> {
                     if (data.getState() != 1) {
                         IToast.showShort(data.getMsg());
+//                        IToast.showShort("已存在在途运单");
                         return;
                     }
 //                    AppUtil.setMyTask(beans.get(mposition));

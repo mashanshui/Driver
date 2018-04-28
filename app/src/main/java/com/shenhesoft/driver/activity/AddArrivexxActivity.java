@@ -145,7 +145,6 @@ public class AddArrivexxActivity extends TakePhotoActivity {
 //            getOrderStatus();
 //        }
         getOrderStatus();
-
     }
 
 
@@ -161,6 +160,7 @@ public class AddArrivexxActivity extends TakePhotoActivity {
         String fhjz2 = etFahjz2.getText().toString().trim();
         String huayzb = etHuayzb.getText().toString().trim();
         String imgSubmit = "";
+
 //        String imgtype = imgUrl.substring(imgUrl.lastIndexOf(".") + 1);
 //        if (imgtype.equals("jpg")) {
 //            imgtype = "jpeg";
@@ -228,7 +228,7 @@ public class AddArrivexxActivity extends TakePhotoActivity {
                     orderid = taskBean.getOrderId();
                     //修改集装箱和散堆装不同的显示ui
                     projectType = taskBean.getProjectType();
-                    if (projectType.equals("1")) {
+                    if ("1".equals(projectType)) {
                         mLayoutFayxx.setVisibility(View.VISIBLE);
                         mLayoutFayxx1.setVisibility(View.GONE);
                         mLayoutFayxx2.setVisibility(View.GONE);
@@ -269,7 +269,7 @@ public class AddArrivexxActivity extends TakePhotoActivity {
          */
         double fhmzNum = txtCastDecimal(fhmz);
         double fhpzNmu = txtCastDecimal(fhpz);
-        if (projectType.equals("1")) {
+        if ("1".equals(projectType)) {
             if (fhjz.isEmpty()) {
                 IToast.showShort("请填入收货净重");
                 return false;

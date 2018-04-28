@@ -2,6 +2,7 @@ package com.shenhesoft.driver.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,17 +24,19 @@ import butterknife.ButterKnife;
  */
 
 public class AllBillsAdapter extends RecyclerView.Adapter<AllBillsAdapter.ViewHolder> {
-
+    private static final String TAG = "AllBillsAdapter";
     private Context mContext;
     private LayoutInflater inflater;
     private ViewHolder mViewHolder;
     private View view;
+    private String type;
     private List<MyOrderBean> mOrderBeanList;
 
-    public AllBillsAdapter(Context context, List<MyOrderBean> orderBeanList) {
+    public AllBillsAdapter(Context context, List<MyOrderBean> orderBeanList,String type) {
         this.inflater = LayoutInflater.from(context);
         this.mContext = context;
         mOrderBeanList = orderBeanList;
+        this.type = type;
     }
 
     @Override
@@ -46,39 +49,40 @@ public class AllBillsAdapter extends RecyclerView.Adapter<AllBillsAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         mViewHolder = holder;
         MyOrderBean bean = mOrderBeanList.get(position);
-        switch (bean.getStatus()) {
-            case "4":
+        String status = String.valueOf(bean.getStatus());
+        Log.e(TAG, "onBindViewHolder: "+status );
+        switch (status) {
+            case "5":
                 setText2();
                 holder.mTvProjectName.setText(bean.getProjectCode());
                 holder.mTextItem1.setText(bean.getOrderCode());
-                holder.mTextItem2.setText("");
+                holder.mTextItem2.setText(bean.getCreateDate());
                 holder.mTextItem3.setText(bean.getCargoName());
                 holder.mTextItem4.setText(bean.getSendCompany());
                 holder.mTextItem5.setText(bean.getReceiptCompany());
-                holder.mTextItem6.setText("");
-
-                break;
-            case "5":
-                setText1();
-                holder.mTvProjectName.setText(bean.getProjectCode());
-                holder.mTextItem1.setText("");
-                holder.mTextItem2.setText(bean.getCargoName());
-                holder.mTextItem3.setText(bean.getSendCompany());
-                holder.mTextItem4.setText(bean.getReceiptCompany());
-                holder.mTextItem5.setText("");
-                holder.mTextItem6.setText("");
+                holder.mTextItem6.setText(bean.getShortBargeCost());
                 break;
             case "6":
-                setText3();
+                setText1();
                 holder.mTvProjectName.setText(bean.getProjectCode());
-                holder.mTextItem1.setText("");
+                holder.mTextItem1.setText(bean.getShPackId());
                 holder.mTextItem2.setText(bean.getCargoName());
                 holder.mTextItem3.setText(bean.getSendCompany());
                 holder.mTextItem4.setText(bean.getReceiptCompany());
-                holder.mTextItem5.setText("");
-                holder.mTextItem6.setText("");
+                holder.mTextItem5.setText(bean.getPackTruckDegree());
+                holder.mTextItem6.setText(bean.getPackTruckNum());
+                break;
+            case "7":
+                setText3();
+                holder.mTvProjectName.setText(bean.getProjectCode());
+                holder.mTextItem1.setText(bean.getShPackId());
+                holder.mTextItem2.setText(bean.getCargoName());
+                holder.mTextItem3.setText(bean.getSendCompany());
+                holder.mTextItem4.setText(bean.getReceiptCompany());
+                holder.mTextItem5.setText(bean.getPackTruckDegree());
+                holder.mTextItem6.setText(bean.getPackTruckNum());
                 holder.mTextItem7.setText("");
-                holder.mTextItem8.setText("");
+                holder.mTextItem8.setText(bean.getFreightChargeAmount());
                 break;
             default:
                 break;

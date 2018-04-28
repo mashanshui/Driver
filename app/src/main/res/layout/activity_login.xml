@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
@@ -9,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
+
     <FrameLayout
         android:id="@+id/de_frm_backgroud"
         android:layout_width="match_parent"
@@ -63,8 +65,8 @@
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:hint="输入账户"
-                    android:maxLines="1"
                     android:maxLength="11"
+                    android:maxLines="1"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#FFFFFF" />
 
@@ -117,7 +119,6 @@
 
             <Button
                 android:id="@+id/email_sign_in_button"
-                android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dip"
@@ -125,43 +126,9 @@
                 android:layout_marginTop="34dip"
                 android:background="@drawable/rs_select_btn_blue"
                 android:text="登录"
-                android:textColor="#FFFFFF" />
-
-
-
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/de_login_forgot"
-        android:textSize="14sp"
-        android:textColor="#999999"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:layout_alignParentBottom="true"
-        android:text="忘记密码" />
-
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Powered by RongCloud"-->
-        <!--android:textSize="12sp"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:padding="15dp"-->
-        <!--android:textColor="#484848"-->
-        <!--/>-->
-
-    <TextView
-        android:id="@+id/de_login_register"
-        android:textSize="14sp"
-        android:textColor="#999999"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="新用户" />
 
 </RelativeLayout>

@@ -1,6 +1,9 @@
 package com.shenhesoft.driver.bean;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author 马山水
@@ -14,97 +17,97 @@ import java.io.Serializable;
 public class MyOrderBean implements Serializable {
 
     /**
-     * arriveAddress : G218国道（巴伦台镇北120公里处）
-     * arriveFreightSite :
-     * arriveFreightYrad :
-     * arrivePlace : 新疆巴音郭楞和静县
-     * arriveredImg : 220420.png
+     * arriveAddress : 1
+     * arriveFreightSite : 
+     * arriveFreightYrad : 
+     * arrivePlace : 新疆,乌鲁木齐,新市区
+     * arriveredImg : 917909.jpg
      * branchGroupName : 新疆秦龙矿业有限公司
      * branchId : 1
      * cancelDate : null
-     * cancelReason :
-     * cancelReasonDetail :
-     * carPlateNumber : 这是车牌号
-     * carType : 这是车型
-     * cargoName : 铁精粉
-     * carrierVehicleId : 997995
-     * carrierVehicleName : 这是姓名
+     * cancelReason : 
+     * cancelReasonDetail : 
+     * carPlateNumber : 测试车辆
+     * carType : 1
+     * cargoName : 1
+     * carrierVehicleId : 998056
+     * carrierVehicleName : 1
      * carteamId : 0
-     * containerNumber1 : 231
-     * containerNumber1Id :
-     * containerNumber2 :
-     * containerNumber2Id :
-     * containerOneReceiptNet : 10
-     * containerOneSendNet : 10
+     * containerNumber1 : 
+     * containerNumber1Id : 
+     * containerNumber2 : 
+     * containerNumber2Id : 
+     * containerOneReceiptNet : 9
+     * containerOneSendNet : 9
      * containerTwoReceiptNet : 0
      * containerTwoSendNet : 0
-     * createDate : 2018-03-05 11:24:20
+     * createDate : 2018-04-21 09:12:58
      * creatorId : 1
      * deductionPrice : 1
-     * deductionRate : 10
+     * deductionRate : 1
      * deleteFlag : 0
-     * deleteName :
-     * deleteReason :
+     * deleteName : 
+     * deleteReason : 
      * deleteTime : null
      * deletorId : 0
-     * distributionCargoPlace : 敦德货场
-     * distributionCargoPlaceId : 73
-     * distributionCargoSite : 敦德货场  敦德货场
-     * distributionCargoSiteId : 250
-     * driverId : 997995
-     * driverName : 这是姓名
-     * driverPhone : 18355187482
+     * distributionCargoPlace : 1
+     * distributionCargoPlaceId : 126
+     * distributionCargoSite : 1  1
+     * distributionCargoSiteId : 477
+     * driverId : 998056
+     * driverName : 1
+     * driverPhone : 17775322135
      * editDate : null
      * exceptionId : 0
      * exceptionReoportId : 0
-     * exceptionReoportName :
-     * exceptionReoportReason :
+     * exceptionReoportName : 
+     * exceptionReoportReason : 
      * exceptionStatus : 0
      * exceptionTime : null
-     * id : 198
+     * id : 777
      * isCancel : 0
-     * orderCode : QLWY970500229998575616
-     * orderImg : 938397.png
+     * orderCode : QLWY987499399863074816
+     * orderImg : 113810.jpg
      * orderOrigin : 1
-     * pickupPlace : 新疆巴音郭楞和静县
-     * pickupPlaceAddress : G218国道（巴伦台镇北120公里处）
+     * pickupPlace : 新疆,乌鲁木齐,新市区
+     * pickupPlaceAddress : 1
      * pieceNumber : 0
      * placeNowId : 0
-     * projectCode : QL20180305111158
-     * projectDistributionId : 129
-     * projectId : 155
-     * projectType : 0
-     * receiptCompany : 巴州敦德矿业有限公司
-     * receiptCompanyId : 30
+     * projectCode : QL20180421091242
+     * projectDistributionId : 362
+     * projectId : 351
+     * projectType : 1
+     * receiptCompany : 1
+     * receiptCompanyId : 66
      * receiptGross : 10
-     * receiptTare : 0
-     * receiptTestIndicators :
-     * receipterDate : 2018-03-05 11:25:19
-     * receiveCompanyPhone :
-     * remark :
-     * sendCompany : 巴州敦德矿业有限公司
-     * sendCompanyId : 30
-     * sendCompanyPhone :
+     * receiptTare : 1
+     * receiptTestIndicators : 
+     * receipterDate : 2018-04-21 09:13:29
+     * receiveCompanyPhone : 
+     * remark : 
+     * sendCompany : 1
+     * sendCompanyId : 66
+     * sendCompanyPhone : 
      * sendGross : 10
-     * sendTare : 0
-     * shortBargeCost : 10
-     * specifications : 粉末
+     * sendTare : 1
+     * shortBargeCost : 1
+     * specifications : 1
      * status : 5
      * stepSelect : 汽运
      * stepSelectCode : 2
      * subsidy : 0
-     * takeCargoPlaceId : 73
-     * takeCargoSiteId : 250
-     * takeCargoSiteName : 敦德货场  敦德货场
-     * takeCarogoPlaceName : 敦德货场
-     * takeDeliveryDate : 2018-03-05 11:24:43
-     * testIndicators : 1
+     * takeCargoPlaceId : 126
+     * takeCargoSiteId : 477
+     * takeCargoSiteName : 1  1
+     * takeCarogoPlaceName : 1
+     * takeDeliveryDate : 2018-04-21 09:13:11
+     * testIndicators : 0
      * transportType : 0
-     * type : 1
-     * updateDate : 2018-03-05 11:25:19
+     * type : 2
+     * updateDate : 2018-04-21 09:13:29
      * userDispatchId : 1
      * userDispatchName : admin
-     * valuationUnitType : 0
+     * valuationUnitType : 1
      */
 
     private String arriveAddress;
@@ -114,7 +117,7 @@ public class MyOrderBean implements Serializable {
     private String arriveredImg;
     private String branchGroupName;
     private String branchId;
-    private Object cancelDate;
+    private String cancelDate;
     private String cancelReason;
     private String cancelReasonDetail;
     private String carPlateNumber;
@@ -138,7 +141,7 @@ public class MyOrderBean implements Serializable {
     private String deleteFlag;
     private String deleteName;
     private String deleteReason;
-    private Object deleteTime;
+    private String deleteTime;
     private String deletorId;
     private String distributionCargoPlace;
     private String distributionCargoPlaceId;
@@ -147,15 +150,15 @@ public class MyOrderBean implements Serializable {
     private String driverId;
     private String driverName;
     private String driverPhone;
-    private Object editDate;
+    private String editDate;
     private String exceptionId;
     private String exceptionReoportId;
     private String exceptionReoportName;
     private String exceptionReoportReason;
     private String exceptionStatus;
-    private Object exceptionTime;
-    private int id;
-    private int isCancel;
+    private String exceptionTime;
+    private String id;
+    private String isCancel;
     private String orderCode;
     private String orderImg;
     private String orderOrigin;
@@ -198,6 +201,40 @@ public class MyOrderBean implements Serializable {
     private String userDispatchId;
     private String userDispatchName;
     private String valuationUnitType;
+    /**
+     * cashAmount : -1
+     * cashPayType : 转账
+     * checkingAuditDate : 2018-04-21 14:18:45
+     * deductionPrice : 1
+     * deductionRate : 1
+     * freightChargeAmount : -1
+     * packTruckDegree : 1
+     * packTruckNum : 1
+     * receiveUserName : 1
+     * settleAuditDate : null
+     * shPackId : 987576308194082816
+     * shortBargeCost : 1
+     * shortOrderFinances : [{"buckleFigure":0,"fShortBargeCost":1,"fSubsidy":0,"orderCode":"QLWY987498485504802816","orderCreateDate":"2018-04-21 09:09:20","shouldPayFigure":1}]
+     * status : 6
+     * suppliesAmount : 0
+     * suppliesExecuteDate : null
+     * suppliesReceiveType :
+     */
+
+    private String cashAmount;
+    private String cashPayType;
+    private String checkingAuditDate;
+    private String freightChargeAmount;
+    private String packTruckDegree;
+    private String packTruckNum;
+    private String receiveUserName;
+    private String settleAuditDate;
+    private String shPackId;
+    private String suppliesAmount;
+    private String suppliesExecuteDate;
+    private String suppliesReceiveType;
+
+    private List<ShortOrderFinancesBean> shortOrderFinances;
 
     public String getArriveAddress() {
         return arriveAddress;
@@ -255,11 +292,11 @@ public class MyOrderBean implements Serializable {
         this.branchId = branchId;
     }
 
-    public Object getCancelDate() {
+    public String getCancelDate() {
         return cancelDate;
     }
 
-    public void setCancelDate(Object cancelDate) {
+    public void setCancelDate(String cancelDate) {
         this.cancelDate = cancelDate;
     }
 
@@ -447,11 +484,11 @@ public class MyOrderBean implements Serializable {
         this.deleteReason = deleteReason;
     }
 
-    public Object getDeleteTime() {
+    public String getDeleteTime() {
         return deleteTime;
     }
 
-    public void setDeleteTime(Object deleteTime) {
+    public void setDeleteTime(String deleteTime) {
         this.deleteTime = deleteTime;
     }
 
@@ -519,11 +556,11 @@ public class MyOrderBean implements Serializable {
         this.driverPhone = driverPhone;
     }
 
-    public Object getEditDate() {
+    public String getEditDate() {
         return editDate;
     }
 
-    public void setEditDate(Object editDate) {
+    public void setEditDate(String editDate) {
         this.editDate = editDate;
     }
 
@@ -567,27 +604,27 @@ public class MyOrderBean implements Serializable {
         this.exceptionStatus = exceptionStatus;
     }
 
-    public Object getExceptionTime() {
+    public String getExceptionTime() {
         return exceptionTime;
     }
 
-    public void setExceptionTime(Object exceptionTime) {
+    public void setExceptionTime(String exceptionTime) {
         this.exceptionTime = exceptionTime;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getIsCancel() {
+    public String getIsCancel() {
         return isCancel;
     }
 
-    public void setIsCancel(int isCancel) {
+    public void setIsCancel(String isCancel) {
         this.isCancel = isCancel;
     }
 
@@ -925,5 +962,177 @@ public class MyOrderBean implements Serializable {
 
     public void setValuationUnitType(String valuationUnitType) {
         this.valuationUnitType = valuationUnitType;
+    }
+
+    public String getCashAmount() {
+        return cashAmount;
+    }
+
+    public void setCashAmount(String cashAmount) {
+        this.cashAmount = cashAmount;
+    }
+
+    public String getCashPayType() {
+        return cashPayType;
+    }
+
+    public void setCashPayType(String cashPayType) {
+        this.cashPayType = cashPayType;
+    }
+
+    public String getCheckingAuditDate() {
+        return checkingAuditDate;
+    }
+
+    public void setCheckingAuditDate(String checkingAuditDate) {
+        this.checkingAuditDate = checkingAuditDate;
+    }
+
+
+    public String getFreightChargeAmount() {
+        return freightChargeAmount;
+    }
+
+    public void setFreightChargeAmount(String freightChargeAmount) {
+        this.freightChargeAmount = freightChargeAmount;
+    }
+
+    public String getPackTruckDegree() {
+        return packTruckDegree;
+    }
+
+    public void setPackTruckDegree(String packTruckDegree) {
+        this.packTruckDegree = packTruckDegree;
+    }
+
+    public String getPackTruckNum() {
+        return packTruckNum;
+    }
+
+    public void setPackTruckNum(String packTruckNum) {
+        this.packTruckNum = packTruckNum;
+    }
+
+    public String getReceiveUserName() {
+        return receiveUserName;
+    }
+
+    public void setReceiveUserName(String receiveUserName) {
+        this.receiveUserName = receiveUserName;
+    }
+
+    public String getSettleAuditDate() {
+        return settleAuditDate;
+    }
+
+    public void setSettleAuditDate(String settleAuditDate) {
+        this.settleAuditDate = settleAuditDate;
+    }
+
+    public String getShPackId() {
+        return shPackId;
+    }
+
+    public void setShPackId(String shPackId) {
+        this.shPackId = shPackId;
+    }
+
+    public String getSuppliesAmount() {
+        return suppliesAmount;
+    }
+
+    public void setSuppliesAmount(String suppliesAmount) {
+        this.suppliesAmount = suppliesAmount;
+    }
+
+    public String getSuppliesExecuteDate() {
+        return suppliesExecuteDate;
+    }
+
+    public void setSuppliesExecuteDate(String suppliesExecuteDate) {
+        this.suppliesExecuteDate = suppliesExecuteDate;
+    }
+
+    public String getSuppliesReceiveType() {
+        return suppliesReceiveType;
+    }
+
+    public void setSuppliesReceiveType(String suppliesReceiveType) {
+        this.suppliesReceiveType = suppliesReceiveType;
+    }
+
+    public List<ShortOrderFinancesBean> getShortOrderFinances() {
+        return shortOrderFinances;
+    }
+
+    public void setShortOrderFinances(List<ShortOrderFinancesBean> shortOrderFinances) {
+        this.shortOrderFinances = shortOrderFinances;
+    }
+
+    public static class ShortOrderFinancesBean implements Serializable{
+        /**
+         * buckleFigure : 0
+         * fShortBargeCost : 1
+         * fSubsidy : 0
+         * orderCode : QLWY987498485504802816
+         * orderCreateDate : 2018-04-21 09:09:20
+         * shouldPayFigure : 1
+         */
+
+        private String buckleFigure;
+        private String fShortBargeCost;
+        private String fSubsidy;
+        @SerializedName("orderCode")
+        private String orderCodeX;
+        private String orderCreateDate;
+        private String shouldPayFigure;
+
+        public String getBuckleFigure() {
+            return buckleFigure;
+        }
+
+        public void setBuckleFigure(String buckleFigure) {
+            this.buckleFigure = buckleFigure;
+        }
+
+        public String getFShortBargeCost() {
+            return fShortBargeCost;
+        }
+
+        public void setFShortBargeCost(String fShortBargeCost) {
+            this.fShortBargeCost = fShortBargeCost;
+        }
+
+        public String getFSubsidy() {
+            return fSubsidy;
+        }
+
+        public void setFSubsidy(String fSubsidy) {
+            this.fSubsidy = fSubsidy;
+        }
+
+        public String getOrderCodeX() {
+            return orderCodeX;
+        }
+
+        public void setOrderCodeX(String orderCodeX) {
+            this.orderCodeX = orderCodeX;
+        }
+
+        public String getOrderCreateDate() {
+            return orderCreateDate;
+        }
+
+        public void setOrderCreateDate(String orderCreateDate) {
+            this.orderCreateDate = orderCreateDate;
+        }
+
+        public String getShouldPayFigure() {
+            return shouldPayFigure;
+        }
+
+        public void setShouldPayFigure(String shouldPayFigure) {
+            this.shouldPayFigure = shouldPayFigure;
+        }
     }
 }

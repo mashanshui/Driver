@@ -43,6 +43,7 @@ import com.shenhesoft.driver.requestutil.entity.RequestResults;
 import com.shenhesoft.driver.utils.AppUtil;
 import com.shenhesoft.driver.utils.DialogUtil;
 import com.shenhesoft.driver.utils.IToast;
+import com.shenhesoft.driver.utils.UltimateBar;
 import com.shenhesoft.driver.utils.cache.SharedPref;
 import com.shenhesoft.driver.view.ClearWriteEditText;
 import com.umeng.message.PushAgent;
@@ -89,9 +90,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//        ButterKnife.bind(this);
-        setHintBar(this);
-
+        UltimateBar ultimateBar = new UltimateBar(this);
+        ultimateBar.setImmersionBar();
         mImg_Background = findViewById(R.id.de_img_backgroud);
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -460,20 +460,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 });
 
         HttpManager.getInstance().statrPostTask(observable, observer);
-    }
-
-    @TargetApi(Build.VERSION_CODES.KITKAT)
-    public void setHintBar(Activity activity) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            View decorView = activity.getWindow().getDecorView();
-            decorView.setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        }
     }
 }
 

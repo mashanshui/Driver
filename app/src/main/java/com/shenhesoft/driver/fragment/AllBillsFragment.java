@@ -4,6 +4,7 @@ package com.shenhesoft.driver.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -91,7 +92,7 @@ public class AllBillsFragment extends BaseFragment implements BGARefreshLayout.B
         list = new ArrayList<>();
         requestStatus = getArguments().getString(KEY_MOTOR_STATUS);
         mRecycler.setLayoutManager(new LinearLayoutManager(mContext));
-        mAdapter = new AllBillsAdapter(mContext, list);
+        mAdapter = new AllBillsAdapter(mContext, list,requestStatus);
         mRecycler.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener((view, position) -> {
             startActivity(new Intent(mContext, WayBillDetailActivity.class).putExtra("myOrderBean", list.get(position)));
@@ -167,7 +168,6 @@ public class AllBillsFragment extends BaseFragment implements BGARefreshLayout.B
                 });
         observer.setRefreshLayout(mMyrefreshLayout);
         HttpManager.getInstance().statrPostTask(observable, observer);
-
     }
 
     @Override

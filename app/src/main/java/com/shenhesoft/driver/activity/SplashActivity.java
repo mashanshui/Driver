@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.TextView;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.shenhesoft.driver.AppConstant;
 import com.shenhesoft.driver.Constants;
 import com.shenhesoft.driver.MainActivity;
@@ -25,10 +25,7 @@ import com.shenhesoft.driver.utils.AppUtil;
 import com.shenhesoft.driver.utils.IToast;
 import com.shenhesoft.driver.utils.cache.SharedPref;
 import com.umeng.message.PushAgent;
-import com.umeng.message.UTrack;
 import com.umeng.message.UmengNotifyClickActivity;
-
-import org.android.agoo.xiaomi.MiPushBroadcastReceiver;
 
 import java.util.List;
 import java.util.Set;
@@ -41,6 +38,7 @@ public class SplashActivity extends UmengNotifyClickActivity implements EasyPerm
     private int CALL_PHONE_REQUEST_CODE = 1001;
     private String userName;
     private String userPassword;
+    private ImageView splashIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +68,8 @@ public class SplashActivity extends UmengNotifyClickActivity implements EasyPerm
     }
 
     private void initView() {
-        TextView textView = (TextView) findViewById(R.id.versionName);
-        textView.setText(packageName(this));
+        splashIcon = (ImageView) findViewById(R.id.splash_icon);
+        Glide.with(SplashActivity.this).load(R.drawable.splash_icon).into(splashIcon);
         checkPermission();
     }
 

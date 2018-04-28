@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -25,8 +26,14 @@ import com.umeng.message.entity.UMessage;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
 
 public class DriverService extends Service {
     private static final String TAG = "DriverService";
@@ -34,6 +41,10 @@ public class DriverService extends Service {
     public AMapLocationClient mLocationClient = null;
     //声明AMapLocationClientOption对象
     public AMapLocationClientOption mLocationOption = null;
+    public static String address;
+    public static double lat;
+    public static double lon;
+    private Disposable mdDisposable;
 
     public DriverService() {
     }
@@ -47,6 +58,19 @@ public class DriverService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        //从0开始发射n个数字为：0-n依次输出，延时5s执行，每600s发射一次。
+        mdDisposable = Flowable.intervalRange(0, 10000, 8, 60*10, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnNext(aLong -> {
+                    Log.e(TAG, "accept: " + aLong + "  address:" + address);
+                    if (!TextUtils.isEmpty(address) && !TextUtils.isEmpty(String.valueOf(lat)) && !TextUtils.isEmpty(String.valueOf(lon))) {
+                        submit(String.valueOf(lat), String.valueOf(lon), address);
+                    }
+                })
+                .doOnComplete(() -> {
+                    //倒计时完毕
+                })
+                .subscribe();
     }
 
     @Override
@@ -60,9 +84,9 @@ public class DriverService extends Service {
         //设置定位模式为AMapLocationMode.Hight_Accuracy，高精度模式。
         mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
         //设置定位间隔,单位毫秒,默认为2000ms，最低1000ms。
-        mLocationOption.setInterval(900000);
+        mLocationOption.setInterval(10000);
 //        mLocationOption.setLocationPurpose(AMapLocationClientOption.AMapLocationPurpose.Transport);
-        if(null != mLocationClient){
+        if (null != mLocationClient) {
             mLocationClient.setLocationOption(mLocationOption);
 //            //设置场景模式后最好调用一次stop，再调用start以保证场景模式生效
 //            mLocationClient.stopLocation();
@@ -73,15 +97,15 @@ public class DriverService extends Service {
 
 
     //声明定位回调监听器
-    public AMapLocationListener mLocationListener = new AMapLocationListener(){
+    public AMapLocationListener mLocationListener = new AMapLocationListener() {
 
         @Override
         public void onLocationChanged(AMapLocation aMapLocation) {
             if (aMapLocation != null) {
                 if (aMapLocation.getErrorCode() == 0) {
                     aMapLocation.getLocationType();//获取当前定位结果来源，如网络定位结果，详见定位类型表
-                    double lat = aMapLocation.getLatitude();//获取纬度
-                    double lon = aMapLocation.getLongitude();//获取经度
+                    lat = aMapLocation.getLatitude();//获取纬度
+                    lon = aMapLocation.getLongitude();//获取经度
                     aMapLocation.getAccuracy();//获取精度信息
                     aMapLocation.getAddress();//地址，如果option中设置isNeedAddress为false，则没有此结果，网络定位结果中会有地址信息，GPS定位不返回地址信息。
                     String country = aMapLocation.getCountry();//国家信息
@@ -100,12 +124,11 @@ public class DriverService extends Service {
                     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     Date date = new Date(aMapLocation.getTime());
                     df.format(date);
-                    String adress = country + "," + province + "," + city + "," + district + "," + street + "," + streetNum;
-                    submit(String.valueOf(lat),String.valueOf(lon),adress);
-                    Log.e("AmapSuccess", aMapLocation.toString() );
-                }else {
+                    address = country + "," + province + "," + city + "," + district + "," + street + "," + streetNum;
+//                    Log.e("AmapSuccess", aMapLocation.toString());
+                } else {
                     //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
-                    Log.e("AmapError","location Error, ErrCode:"
+                    Log.e("AmapError", "location Error, ErrCode:"
                             + aMapLocation.getErrorCode() + ", errInfo:"
                             + aMapLocation.getErrorInfo());
                 }
@@ -116,7 +139,7 @@ public class DriverService extends Service {
     /***
      * 位置信息上传成功
      */
-    private void submit(String lat, String lon,String position) {
+    private void submit(String lat, String lon, String position) {
 
         Observable<RequestResults> observable = HttpManager.getInstance().getUserService()
                 .updatelocation(ApiRetrofit.getInstance().updateLocation(lat, lon, position, "后台上报"));

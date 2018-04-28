@@ -2,28 +2,29 @@ package com.shenhesoft.driver.fragment;
 
 
 import android.content.Intent;
-import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.hanks.htextview.rainbow.RainbowTextView;
 import com.shenhesoft.driver.AppConstant;
 import com.shenhesoft.driver.R;
 import com.shenhesoft.driver.activity.AddArrivexxActivity;
 import com.shenhesoft.driver.activity.AddFayxxActivity;
 import com.shenhesoft.driver.activity.ArrivePlaceActivity;
-import com.shenhesoft.driver.activity.SplashActivity;
 import com.shenhesoft.driver.activity.task.TaskActivity;
+import com.shenhesoft.driver.activity.user.UploadLoadActivity;
+import com.shenhesoft.driver.activity.user.UploadLoadDetailActivity;
 import com.shenhesoft.driver.base.BaseFragment;
 import com.shenhesoft.driver.bean.CurrentStatusBean;
 import com.shenhesoft.driver.bean.Event;
+import com.shenhesoft.driver.bean.LoadConditionBean;
 import com.shenhesoft.driver.bean.TaskBean;
 import com.shenhesoft.driver.requestutil.ApiRetrofit;
 import com.shenhesoft.driver.requestutil.HttpManager;
@@ -35,10 +36,12 @@ import com.shenhesoft.driver.utils.EventBusUtils;
 import com.shenhesoft.driver.utils.IToast;
 import com.shenhesoft.driver.utils.cache.SharedPref;
 
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 import io.reactivex.Observable;
 
@@ -61,8 +64,18 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @BindView(R.id.message_remind)
     TextView mMessageRemind;
     Unbinder unbinder;
+    @BindView(R.id.tv_upload_load_condition)
+    TextView tvUploadLoadCondition;
+    @BindView(R.id.tv_username)
+    TextView tvUsername;
+    @BindView(R.id.tv_message)
+    TextView tvMessage;
+    @BindView(R.id.tv_time)
+    TextView tvTime;
+    @BindView(R.id.ll_load_condition)
+    LinearLayout llLoadCondition;
 
-    private int receiptTare=0;
+    private int receiptTare = 0;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -81,6 +94,23 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             getCurrentStatus();
         } else if (event.getCode() == EventBusUtils.EventCode.B) {
             getCurrentStatus();
+        }
+    }
+
+
+    @OnClick({R.id.tv_upload_load_condition, R.id.ll_load_condition})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tv_upload_load_condition:
+                Intent intent1 = new Intent(getActivity(), UploadLoadActivity.class);
+                startActivity(intent1);
+                break;
+            case R.id.ll_load_condition:
+                Intent intent2 = new Intent(getActivity(), UploadLoadDetailActivity.class);
+                startActivity(intent2);
+                break;
+            default:
+                break;
         }
     }
 
@@ -183,7 +213,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     }
 
     private void initData() {
+        getLoadCondition();
     }
+
 
     private void initListener() {
         taskLayout.setOnClickListener(this);
@@ -326,6 +358,25 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     }
 
+
+    private void getLoadCondition() {
+        Map<String, Object> params = ApiRetrofit.getInstance().getLoadCondition(0);
+
+        Observable<RequestResults<LoadConditionBean>> observable = HttpManager.getInstance()
+                .getOrderService().getLoadCondition(params);
+
+        HttpObserver<RequestResults<LoadConditionBean>> observer = new HttpObserver<>(mContext,
+                data -> {
+                    List<LoadConditionBean.DataBean> dataBeanList = data.getObj().getData();
+                    if (!dataBeanList.isEmpty()) {
+                        tvMessage.setText(dataBeanList.get(0).getDriverMsg());
+                        tvTime.setText(dataBeanList.get(0).getCreateTime());
+                        tvUsername.setText(dataBeanList.get(0).getDriverName());
+                    }
+                });
+        HttpManager.getInstance().statrPostTask(observable, observer);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // TODO: inflate a fragment view
@@ -339,4 +390,5 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         super.onDestroyView();
         unbinder.unbind();
     }
+
 }

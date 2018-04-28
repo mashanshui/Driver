@@ -1,7 +1,9 @@
 package com.shenhesoft.driver.requestutil;
 
 
+import com.shenhesoft.driver.HttpURL;
 import com.shenhesoft.driver.bean.CurrentStatusBean;
+import com.shenhesoft.driver.bean.LoadConditionBean;
 import com.shenhesoft.driver.bean.MyOrderBean;
 import com.shenhesoft.driver.bean.TaskBean;
 import com.shenhesoft.driver.requestutil.entity.RequestResults;
@@ -87,6 +89,21 @@ public interface OrderService {
     @POST("driverOrder/saveDirverTbOrderArriveApp.do")
     Observable<RequestResults> saveMotorArriveForm(@Body Map<String, Object> params);
 
+    /**
+     * 司机上传路况信息
+     * @param params
+     * @return
+     */
+    @POST(HttpURL.MIP+"/logistics-manage-web/api/link/roadInfo")
+    Observable<RequestResults> uploadLoadCondition(@Body Map<String, Object> params);
+
+    /**
+     * 司机获取路况信息
+     * @param params
+     * @return
+     */
+    @POST(HttpURL.MIP+"/logistics-manage-web/api/link/roadInfos")
+    Observable<RequestResults<LoadConditionBean>> getLoadCondition(@Body Map<String, Object> params);
 
     /**
      * 任务列表

@@ -26,7 +26,7 @@ public interface UserService {
      *
      * @return
      */
-    @POST("http://139.196.100.149:8081/logistics-manage-web/api/mapPoint")
+    @POST(HttpURL.MIP+"/logistics-manage-web/api/mapPoint")
     Observable<RequestResults> updatelocation(@Body Map<String, Object> params);
 
     /**
