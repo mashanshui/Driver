@@ -140,7 +140,7 @@ public class TsakDetailsActivity extends BaseActivity implements View.OnClickLis
         }
 
 
-        tvSendCity.setText(mTaskBean.getSendCity());
+        tvSendCity.setText(mTaskBean.getTakeCity());
         tvArricCity.setText(mTaskBean.getArriCity());
         tvStatus.setText(status);
         tvXiangmbh.setText(mTaskBean.getProjectNum());
