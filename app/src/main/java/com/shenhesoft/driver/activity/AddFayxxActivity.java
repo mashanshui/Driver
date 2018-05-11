@@ -319,6 +319,9 @@ public class AddFayxxActivity extends TakePhotoActivity {
                 return false;
             }
             BigDecimal fhjz1Num = new BigDecimal(fhjz1);
+            if (fhjz2.isEmpty()) {
+                fhjz2 = "0";
+            }
             BigDecimal fhjz2Num = new BigDecimal(fhjz2);
             if (fhmzNum.subtract(fhpzNmu).doubleValue() != fhjz1Num.add(fhjz2Num).doubleValue()) {
                 IToast.showShort("重量填写错误");
