@@ -62,7 +62,7 @@ public class DriverService extends Service {
         mdDisposable = Flowable.intervalRange(0, 10000, 8, 60*10, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnNext(aLong -> {
-                    Log.e(TAG, "accept: " + aLong + "  address:" + address);
+                    Log.d(TAG, "accept: " + aLong + "  address:" + address);
                     if (!TextUtils.isEmpty(address) && !TextUtils.isEmpty(String.valueOf(lat)) && !TextUtils.isEmpty(String.valueOf(lon))) {
                         submit(String.valueOf(lat), String.valueOf(lon), address);
                     }
@@ -161,6 +161,7 @@ public class DriverService extends Service {
         super.onDestroy();
         mLocationClient.stopLocation();//停止定位后，本地定位服务并不会被销毁
         mLocationClient.onDestroy();//销毁定位客户端，同时销毁本地定位服务。
+        mdDisposable.dispose();
         Intent intent = new Intent();
         intent.setAction("LOCATION_RESTART");
         sendBroadcast(intent);

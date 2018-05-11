@@ -208,7 +208,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     }
 
     private void initView() {
-        titleTv.setText("司机APP");
+        titleTv.setText("司机助手");
         mMessageRemind.setSelected(true);
     }
 

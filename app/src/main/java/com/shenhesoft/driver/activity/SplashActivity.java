@@ -90,7 +90,6 @@ public class SplashActivity extends UmengNotifyClickActivity implements EasyPerm
                 //未同意过,或者说是拒绝了，再次申请权限
                 EasyPermissions.requestPermissions(this, "需要定位权限", CALL_PHONE_REQUEST_CODE, mPermissionList);
             }
-
         } else {
             //6.0以下，不需要授权
             startLogin();

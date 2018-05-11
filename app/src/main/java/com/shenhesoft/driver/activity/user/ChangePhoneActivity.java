@@ -108,7 +108,6 @@ public class ChangePhoneActivity extends BaseActivity {
                         return;
                     }
                     IToast.showShort("验证码发送成功");
-
                 });
 
         HttpManager.getInstance().statrPostTask(observable, observer);

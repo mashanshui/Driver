@@ -22,6 +22,7 @@ import com.shenhesoft.driver.utils.EventBusUtils;
 import com.shenhesoft.driver.utils.IToast;
 import com.shenhesoft.driver.utils.TakePhotoActivity;
 
+import java.math.BigDecimal;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -172,12 +173,12 @@ public class AddArrivexxActivity extends TakePhotoActivity {
         }
 
 
-        if (!inputverification(fhpz, fhmz,fhjz, fhjz1, fhjz2, huayzb, imgSubmit)) {
+        if (!inputverification(fhpz, fhmz, fhjz, fhjz1, fhjz2, huayzb, imgSubmit)) {
             return;
         }
 
         Map<String, Object> params = ApiRetrofit.getInstance().submitMotorArrivexxParams(orderid, txtCastDecimal(fhpz)
-                , txtCastDecimal(fhmz),txtCastDecimal(fhjz), txtCastDecimal(fhjz1), txtCastDecimal(fhjz2), huayzb, imgSubmit, projectType);
+                , txtCastDecimal(fhmz), txtCastDecimal(fhjz), txtCastDecimal(fhjz1), txtCastDecimal(fhjz2), huayzb, imgSubmit, projectType);
 
 
         Observable<RequestResults> observable = HttpManager.getInstance()
@@ -250,7 +251,7 @@ public class AddArrivexxActivity extends TakePhotoActivity {
     }
 
     //输入验证...
-    private boolean inputverification( String fhpz, String fhmz,String fhjz,
+    private boolean inputverification(String fhpz, String fhmz, String fhjz,
                                       String fhjz1, String fhjz2, String huayzb, String imgUrl) {
         if (fhpz.isEmpty()) {
             IToast.showShort("请填入收货皮重");
@@ -267,15 +268,15 @@ public class AddArrivexxActivity extends TakePhotoActivity {
         /**
          * 根据集装箱和散堆装判断数据是否正确
          */
-        double fhmzNum = txtCastDecimal(fhmz);
-        double fhpzNmu = txtCastDecimal(fhpz);
+        BigDecimal fhmzNum = new BigDecimal(fhmz);
+        BigDecimal fhpzNmu = new BigDecimal(fhpz);
         if ("1".equals(projectType)) {
             if (fhjz.isEmpty()) {
                 IToast.showShort("请填入收货净重");
                 return false;
             }
             double fhjzNum = txtCastDecimal(fhjz);
-            if (fhmzNum - fhpzNmu != fhjzNum) {
+            if (fhmzNum.subtract(fhpzNmu).doubleValue() != fhjzNum) {
                 IToast.showShort("重量填写错误");
                 return false;
             }
@@ -288,9 +289,12 @@ public class AddArrivexxActivity extends TakePhotoActivity {
                 IToast.showShort("请填入第2个集装箱收货净重");
                 return false;
             }
-            double fhjz1Num = txtCastDecimal(fhjz1);
-            double fhjz2Num = txtCastDecimal(fhjz2);
-            if (fhmzNum - fhpzNmu != fhjz1Num + fhjz2Num) {
+            BigDecimal fhjz1Num = new BigDecimal(fhjz1);
+            if (fhjz2.isEmpty()) {
+                fhjz2 = "0";
+            }
+            BigDecimal fhjz2Num = new BigDecimal(fhjz2);
+            if (fhmzNum.subtract(fhpzNmu).doubleValue() != fhjz1Num.add(fhjz2Num).doubleValue()) {
                 IToast.showShort("重量填写错误");
                 return false;
             }
