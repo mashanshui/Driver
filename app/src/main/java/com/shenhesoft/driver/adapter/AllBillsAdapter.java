@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.shenhesoft.driver.R;
 import com.shenhesoft.driver.bean.MyOrderBean;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import butterknife.BindView;
@@ -50,7 +51,6 @@ public class AllBillsAdapter extends RecyclerView.Adapter<AllBillsAdapter.ViewHo
         mViewHolder = holder;
         MyOrderBean bean = mOrderBeanList.get(position);
         String status = String.valueOf(bean.getStatus());
-        Log.e(TAG, "onBindViewHolder: "+status );
         switch (status) {
             case "5":
                 setText2();
@@ -61,6 +61,7 @@ public class AllBillsAdapter extends RecyclerView.Adapter<AllBillsAdapter.ViewHo
                 holder.mTextItem4.setText(bean.getSendCompany());
                 holder.mTextItem5.setText(bean.getReceiptCompany());
                 holder.mTextItem6.setText(bean.getShortBargeCost());
+//                holder.mTextItem6.setText(bean.getShouldMoney());
                 break;
             case "6":
                 setText1();
@@ -115,7 +116,8 @@ public class AllBillsAdapter extends RecyclerView.Adapter<AllBillsAdapter.ViewHo
         mViewHolder.mText3.setText("货物品名");
         mViewHolder.mText4.setText("发货单位");
         mViewHolder.mText5.setText("收货单位");
-        mViewHolder.mText6.setText("核计金额");
+//        mViewHolder.mText6.setText("核计金额");
+        mViewHolder.mText6.setText("运输单价");
         mViewHolder.mLlText1.setVisibility(View.GONE);
         mViewHolder.mLlText2.setVisibility(View.GONE);
     }

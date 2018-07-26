@@ -142,7 +142,7 @@ public class TaskBean implements Serializable {
     private String containerNumber2;   //集装箱2的名字
 
     @SerializedName("receiptTare")
-    private int receiptTare;        //到货载重
+    private double receiptTare;        //到货载重
 
     public String getContainerNumber1() {
         return containerNumber1;
@@ -150,6 +150,14 @@ public class TaskBean implements Serializable {
 
     public void setContainerNumber1(String containerNumber1) {
         this.containerNumber1 = containerNumber1;
+    }
+
+    public double getReceiptTare() {
+        return receiptTare;
+    }
+
+    public void setReceiptTare(double receiptTare) {
+        this.receiptTare = receiptTare;
     }
 
     public String getContainerNumber2() {
@@ -386,11 +394,11 @@ public class TaskBean implements Serializable {
         this.status = status;
     }
 
-    public int getReceiptTare() {
-        return receiptTare;
+    public String getmProjectNum() {
+        return mProjectNum;
     }
 
-    public void setReceiptTare(int receiptTare) {
-        this.receiptTare = receiptTare;
+    public void setmProjectNum(String mProjectNum) {
+        this.mProjectNum = mProjectNum;
     }
 }

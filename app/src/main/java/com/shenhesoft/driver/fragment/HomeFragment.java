@@ -75,7 +75,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @BindView(R.id.ll_load_condition)
     LinearLayout llLoadCondition;
 
-    private int receiptTare = 0;
+    private double receiptTare = 0;
 
     public HomeFragment() {
         // Required empty public constructor

@@ -201,6 +201,7 @@ public class MyOrderBean implements Serializable {
     private String userDispatchId;
     private String userDispatchName;
     private String valuationUnitType;
+    private String shouldMoney;
     /**
      * cashAmount : -1
      * cashPayType : 转账
@@ -258,6 +259,14 @@ public class MyOrderBean implements Serializable {
 
     public void setArriveFreightYrad(String arriveFreightYrad) {
         this.arriveFreightYrad = arriveFreightYrad;
+    }
+
+    public String getShouldMoney() {
+        return shouldMoney;
+    }
+
+    public void setShouldMoney(String shouldMoney) {
+        this.shouldMoney = shouldMoney;
     }
 
     public String getArrivePlace() {

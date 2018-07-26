@@ -58,6 +58,15 @@
         android:src="@mipmap/take_goods"
         app:layout_constraintTop_toBottomOf="@id/tv_project_num" />
 
+    <View
+        android:id="@+id/line1"
+        android:layout_width="1dp"
+        android:layout_height="60dp"
+        android:background="#ccc"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_project_num" />
+
     <TextView
         android:id="@+id/take_goods_tv"
         android:layout_width="wrap_content"
@@ -69,15 +78,6 @@
         android:textColor="#7f7f7f"
         android:textSize="12sp"
         app:layout_constraintLeft_toRightOf="@id/take_goods_image"
-        app:layout_constraintTop_toBottomOf="@id/tv_project_num" />
-
-    <View
-        android:id="@+id/line1"
-        android:layout_width="1dp"
-        android:layout_height="60dp"
-        android:background="#ccc"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_project_num" />
 
     <ImageView

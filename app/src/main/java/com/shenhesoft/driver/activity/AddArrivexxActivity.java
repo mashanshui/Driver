@@ -89,7 +89,7 @@ public class AddArrivexxActivity extends TakePhotoActivity {
     private String projectType;  //0 集装箱 1 散装
     private int pageNo = 1;
     private boolean isnodata;
-    private int receiptTare;
+    private double receiptTare;
 
 
     @Override

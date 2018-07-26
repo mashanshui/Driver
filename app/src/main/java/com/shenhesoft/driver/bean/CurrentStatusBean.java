@@ -108,7 +108,7 @@ public class CurrentStatusBean {
     private String arrivePlace;
     private String arriveredImg;
     private String branchGroupName;
-    private int branchId;
+    private String branchId;
     private Object cancelDate;
     private String cancelReason;
     private String cancelReasonDetail;
@@ -117,82 +117,82 @@ public class CurrentStatusBean {
     private String cargoName;
     private String carrierVehicleId;
     private String carrierVehicleName;
-    private int carteamId;
+    private String carteamId;
     private String containerNumber1;
     private String containerNumber1Id;
     private String containerNumber2;
     private String containerNumber2Id;
-    private int containerOneReceiptNet;
-    private int containerOneSendNet;
-    private int containerTwoReceiptNet;
-    private int containerTwoSendNet;
+    private String containerOneReceiptNet;
+    private String containerOneSendNet;
+    private String containerTwoReceiptNet;
+    private String containerTwoSendNet;
     private String createDate;
-    private int creatorId;
-    private int deductionPrice;
-    private int deductionRate;
-    private int deleteFlag;
+    private String creatorId;
+    private String deductionPrice;
+    private String deductionRate;
+    private String deleteFlag;
     private String deleteName;
     private String deleteReason;
     private String deleteTime;
-    private int deletorId;
+    private String deletorId;
     private String distributionCargoPlace;
-    private int distributionCargoPlaceId;
+    private String distributionCargoPlaceId;
     private String distributionCargoSite;
-    private int distributionCargoSiteId;
-    private int driverId;
+    private String distributionCargoSiteId;
+    private String driverId;
     private String driverName;
     private String driverPhone;
     private Object editDate;
-    private int exceptionId;
-    private int exceptionReoportId;
+    private String exceptionId;
+    private String exceptionReoportId;
     private String exceptionReoportName;
     private String exceptionReoportReason;
-    private int exceptionStatus;
+    private String exceptionStatus;
     private Object exceptionTime;
-    private int id;
-    private int isCancel;
+    private String id;
+    private String isCancel;
     private String orderCode;
     private String orderImg;
-    private int orderOrigin;
+    private String orderOrigin;
     private String pickupPlace;
     private String pickupPlaceAddress;
-    private int pieceNumber;
-    private int placeNowId;
+    private String pieceNumber;
+    private String placeNowId;
     private String projectCode;
-    private int projectDistributionId;
-    private int projectId;
-    private int projectType;
+    private String projectDistributionId;
+    private String projectId;
+    private String projectType;
     private String receiptCompany;
-    private int receiptCompanyId;
-    private int receiptGross;
-    private int receiptTare;
+    private String receiptCompanyId;
+    private String receiptGross;
+    private double receiptTare;
     private String receiptTestIndicators;
     private Object receipterDate;
     private String receiveCompanyPhone;
     private String remark;
     private String sendCompany;
-    private int sendCompanyId;
+    private String sendCompanyId;
     private String sendCompanyPhone;
-    private int sendGross;
-    private int sendTare;
-    private int shortBargeCost;
+    private String sendGross;
+    private String sendTare;
+    private String shortBargeCost;
     private String specifications;
     private int status;
     private String stepSelect;
-    private int stepSelectCode;
-    private int subsidy;
-    private int takeCargoPlaceId;
-    private int takeCargoSiteId;
+    private String stepSelectCode;
+    private String subsidy;
+    private String takeCargoPlaceId;
+    private String takeCargoSiteId;
     private String takeCargoSiteName;
     private String takeCarogoPlaceName;
     private Object takeDeliveryDate;
     private String testIndicators;
-    private int transportType;
-    private int type;
+    private String transportType;
+    private String type;
     private Object updateDate;
-    private int userDispatchId;
+    private String userDispatchId;
     private String userDispatchName;
-    private int valuationUnitType;
+    private String valuationUnitType;
 
     public String getArriveAddress() {
         return arriveAddress;
@@ -242,11 +242,11 @@ public class CurrentStatusBean {
         this.branchGroupName = branchGroupName;
     }
 
-    public int getBranchId() {
+    public String getBranchId() {
         return branchId;
     }
 
-    public void setBranchId(int branchId) {
+    public void setBranchId(String branchId) {
         this.branchId = branchId;
     }
 
@@ -314,11 +314,11 @@ public class CurrentStatusBean {
         this.carrierVehicleName = carrierVehicleName;
     }
 
-    public int getCarteamId() {
+    public String getCarteamId() {
         return carteamId;
     }
 
-    public void setCarteamId(int carteamId) {
+    public void setCarteamId(String carteamId) {
         this.carteamId = carteamId;
     }
 
@@ -354,35 +354,35 @@ public class CurrentStatusBean {
         this.containerNumber2Id = containerNumber2Id;
     }
 
-    public int getContainerOneReceiptNet() {
+    public String getContainerOneReceiptNet() {
         return containerOneReceiptNet;
     }
 
-    public void setContainerOneReceiptNet(int containerOneReceiptNet) {
+    public void setContainerOneReceiptNet(String containerOneReceiptNet) {
         this.containerOneReceiptNet = containerOneReceiptNet;
     }
 
-    public int getContainerOneSendNet() {
+    public String getContainerOneSendNet() {
         return containerOneSendNet;
     }
 
-    public void setContainerOneSendNet(int containerOneSendNet) {
+    public void setContainerOneSendNet(String containerOneSendNet) {
         this.containerOneSendNet = containerOneSendNet;
     }
 
-    public int getContainerTwoReceiptNet() {
+    public String getContainerTwoReceiptNet() {
         return containerTwoReceiptNet;
     }
 
-    public void setContainerTwoReceiptNet(int containerTwoReceiptNet) {
+    public void setContainerTwoReceiptNet(String containerTwoReceiptNet) {
         this.containerTwoReceiptNet = containerTwoReceiptNet;
     }
 
-    public int getContainerTwoSendNet() {
+    public String getContainerTwoSendNet() {
         return containerTwoSendNet;
     }
 
-    public void setContainerTwoSendNet(int containerTwoSendNet) {
+    public void setContainerTwoSendNet(String containerTwoSendNet) {
         this.containerTwoSendNet = containerTwoSendNet;
     }
 
@@ -394,35 +394,35 @@ public class CurrentStatusBean {
         this.createDate = createDate;
     }
 
-    public int getCreatorId() {
+    public String getCreatorId() {
         return creatorId;
     }
 
-    public void setCreatorId(int creatorId) {
+    public void setCreatorId(String creatorId) {
         this.creatorId = creatorId;
     }
 
-    public int getDeductionPrice() {
+    public String getDeductionPrice() {
         return deductionPrice;
     }
 
-    public void setDeductionPrice(int deductionPrice) {
+    public void setDeductionPrice(String deductionPrice) {
         this.deductionPrice = deductionPrice;
     }
 
-    public int getDeductionRate() {
+    public String getDeductionRate() {
         return deductionRate;
     }
 
-    public void setDeductionRate(int deductionRate) {
+    public void setDeductionRate(String deductionRate) {
         this.deductionRate = deductionRate;
     }
 
-    public int getDeleteFlag() {
+    public String getDeleteFlag() {
         return deleteFlag;
     }
 
-    public void setDeleteFlag(int deleteFlag) {
+    public void setDeleteFlag(String deleteFlag) {
         this.deleteFlag = deleteFlag;
     }
 
@@ -450,11 +450,11 @@ public class CurrentStatusBean {
         this.deleteTime = deleteTime;
     }
 
-    public int getDeletorId() {
+    public String getDeletorId() {
         return deletorId;
     }
 
-    public void setDeletorId(int deletorId) {
+    public void setDeletorId(String deletorId) {
         this.deletorId = deletorId;
     }
 
@@ -466,11 +466,11 @@ public class CurrentStatusBean {
         this.distributionCargoPlace = distributionCargoPlace;
     }
 
-    public int getDistributionCargoPlaceId() {
+    public String getDistributionCargoPlaceId() {
         return distributionCargoPlaceId;
     }
 
-    public void setDistributionCargoPlaceId(int distributionCargoPlaceId) {
+    public void setDistributionCargoPlaceId(String distributionCargoPlaceId) {
         this.distributionCargoPlaceId = distributionCargoPlaceId;
     }
 
@@ -482,19 +482,19 @@ public class CurrentStatusBean {
         this.distributionCargoSite = distributionCargoSite;
     }
 
-    public int getDistributionCargoSiteId() {
+    public String getDistributionCargoSiteId() {
         return distributionCargoSiteId;
     }
 
-    public void setDistributionCargoSiteId(int distributionCargoSiteId) {
+    public void setDistributionCargoSiteId(String distributionCargoSiteId) {
         this.distributionCargoSiteId = distributionCargoSiteId;
     }
 
-    public int getDriverId() {
+    public String getDriverId() {
         return driverId;
     }
 
-    public void setDriverId(int driverId) {
+    public void setDriverId(String driverId) {
         this.driverId = driverId;
     }
 
@@ -522,19 +522,19 @@ public class CurrentStatusBean {
         this.editDate = editDate;
     }
 
-    public int getExceptionId() {
+    public String getExceptionId() {
         return exceptionId;
     }
 
-    public void setExceptionId(int exceptionId) {
+    public void setExceptionId(String exceptionId) {
         this.exceptionId = exceptionId;
     }
 
-    public int getExceptionReoportId() {
+    public String getExceptionReoportId() {
         return exceptionReoportId;
     }
 
-    public void setExceptionReoportId(int exceptionReoportId) {
+    public void setExceptionReoportId(String exceptionReoportId) {
         this.exceptionReoportId = exceptionReoportId;
     }
 
@@ -554,11 +554,11 @@ public class CurrentStatusBean {
         this.exceptionReoportReason = exceptionReoportReason;
     }
 
-    public int getExceptionStatus() {
+    public String getExceptionStatus() {
         return exceptionStatus;
     }
 
-    public void setExceptionStatus(int exceptionStatus) {
+    public void setExceptionStatus(String exceptionStatus) {
         this.exceptionStatus = exceptionStatus;
     }
 
@@ -570,19 +570,19 @@ public class CurrentStatusBean {
         this.exceptionTime = exceptionTime;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getIsCancel() {
+    public String getIsCancel() {
         return isCancel;
     }
 
-    public void setIsCancel(int isCancel) {
+    public void setIsCancel(String isCancel) {
         this.isCancel = isCancel;
     }
 
@@ -602,11 +602,11 @@ public class CurrentStatusBean {
         this.orderImg = orderImg;
     }
 
-    public int getOrderOrigin() {
+    public String getOrderOrigin() {
         return orderOrigin;
     }
 
-    public void setOrderOrigin(int orderOrigin) {
+    public void setOrderOrigin(String orderOrigin) {
         this.orderOrigin = orderOrigin;
     }
 
@@ -626,19 +626,19 @@ public class CurrentStatusBean {
         this.pickupPlaceAddress = pickupPlaceAddress;
     }
 
-    public int getPieceNumber() {
+    public String getPieceNumber() {
         return pieceNumber;
     }
 
-    public void setPieceNumber(int pieceNumber) {
+    public void setPieceNumber(String pieceNumber) {
         this.pieceNumber = pieceNumber;
     }
 
-    public int getPlaceNowId() {
+    public String getPlaceNowId() {
         return placeNowId;
     }
 
-    public void setPlaceNowId(int placeNowId) {
+    public void setPlaceNowId(String placeNowId) {
         this.placeNowId = placeNowId;
     }
 
@@ -650,27 +650,27 @@ public class CurrentStatusBean {
         this.projectCode = projectCode;
     }
 
-    public int getProjectDistributionId() {
+    public String getProjectDistributionId() {
         return projectDistributionId;
     }
 
-    public void setProjectDistributionId(int projectDistributionId) {
+    public void setProjectDistributionId(String projectDistributionId) {
         this.projectDistributionId = projectDistributionId;
     }
 
-    public int getProjectId() {
+    public String getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(int projectId) {
+    public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
 
-    public int getProjectType() {
+    public String getProjectType() {
         return projectType;
     }
 
-    public void setProjectType(int projectType) {
+    public void setProjectType(String projectType) {
         this.projectType = projectType;
     }
 
@@ -682,28 +682,36 @@ public class CurrentStatusBean {
         this.receiptCompany = receiptCompany;
     }
 
-    public int getReceiptCompanyId() {
+    public String getReceiptCompanyId() {
         return receiptCompanyId;
     }
 
-    public void setReceiptCompanyId(int receiptCompanyId) {
+    public void setReceiptCompanyId(String receiptCompanyId) {
         this.receiptCompanyId = receiptCompanyId;
     }
 
-    public int getReceiptGross() {
+    public String getReceiptGross() {
         return receiptGross;
     }
 
-    public void setReceiptGross(int receiptGross) {
+    public void setReceiptGross(String receiptGross) {
         this.receiptGross = receiptGross;
     }
 
-    public int getReceiptTare() {
+    public double getReceiptTare() {
         return receiptTare;
     }
 
-    public void setReceiptTare(int receiptTare) {
+    public void setReceiptTare(double receiptTare) {
         this.receiptTare = receiptTare;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public String getReceiptTestIndicators() {
@@ -746,11 +754,11 @@ public class CurrentStatusBean {
         this.sendCompany = sendCompany;
     }
 
-    public int getSendCompanyId() {
+    public String getSendCompanyId() {
         return sendCompanyId;
     }
 
-    public void setSendCompanyId(int sendCompanyId) {
+    public void setSendCompanyId(String sendCompanyId) {
         this.sendCompanyId = sendCompanyId;
     }
 
@@ -762,27 +770,27 @@ public class CurrentStatusBean {
         this.sendCompanyPhone = sendCompanyPhone;
     }
 
-    public int getSendGross() {
+    public String getSendGross() {
         return sendGross;
     }
 
-    public void setSendGross(int sendGross) {
+    public void setSendGross(String sendGross) {
         this.sendGross = sendGross;
     }
 
-    public int getSendTare() {
+    public String getSendTare() {
         return sendTare;
     }
 
-    public void setSendTare(int sendTare) {
+    public void setSendTare(String sendTare) {
         this.sendTare = sendTare;
     }
 
-    public int getShortBargeCost() {
+    public String getShortBargeCost() {
         return shortBargeCost;
     }
 
-    public void setShortBargeCost(int shortBargeCost) {
+    public void setShortBargeCost(String shortBargeCost) {
         this.shortBargeCost = shortBargeCost;
     }
 
@@ -794,13 +802,6 @@ public class CurrentStatusBean {
         this.specifications = specifications;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
 
     public String getStepSelect() {
         return stepSelect;
@@ -810,35 +811,35 @@ public class CurrentStatusBean {
         this.stepSelect = stepSelect;
     }
 
-    public int getStepSelectCode() {
+    public String getStepSelectCode() {
         return stepSelectCode;
     }
 
-    public void setStepSelectCode(int stepSelectCode) {
+    public void setStepSelectCode(String stepSelectCode) {
         this.stepSelectCode = stepSelectCode;
     }
 
-    public int getSubsidy() {
+    public String getSubsidy() {
         return subsidy;
     }
 
-    public void setSubsidy(int subsidy) {
+    public void setSubsidy(String subsidy) {
         this.subsidy = subsidy;
     }
 
-    public int getTakeCargoPlaceId() {
+    public String getTakeCargoPlaceId() {
         return takeCargoPlaceId;
     }
 
-    public void setTakeCargoPlaceId(int takeCargoPlaceId) {
+    public void setTakeCargoPlaceId(String takeCargoPlaceId) {
         this.takeCargoPlaceId = takeCargoPlaceId;
     }
 
-    public int getTakeCargoSiteId() {
+    public String getTakeCargoSiteId() {
         return takeCargoSiteId;
     }
 
-    public void setTakeCargoSiteId(int takeCargoSiteId) {
+    public void setTakeCargoSiteId(String takeCargoSiteId) {
         this.takeCargoSiteId = takeCargoSiteId;
     }
 
@@ -874,19 +875,19 @@ public class CurrentStatusBean {
         this.testIndicators = testIndicators;
     }
 
-    public int getTransportType() {
+    public String getTransportType() {
         return transportType;
     }
 
-    public void setTransportType(int transportType) {
+    public void setTransportType(String transportType) {
         this.transportType = transportType;
     }
 
-    public int getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -898,11 +899,11 @@ public class CurrentStatusBean {
         this.updateDate = updateDate;
     }
 
-    public int getUserDispatchId() {
+    public String getUserDispatchId() {
         return userDispatchId;
     }
 
-    public void setUserDispatchId(int userDispatchId) {
+    public void setUserDispatchId(String userDispatchId) {
         this.userDispatchId = userDispatchId;
     }
 
@@ -914,11 +915,11 @@ public class CurrentStatusBean {
         this.userDispatchName = userDispatchName;
     }
 
-    public int getValuationUnitType() {
+    public String getValuationUnitType() {
         return valuationUnitType;
     }
 
-    public void setValuationUnitType(int valuationUnitType) {
+    public void setValuationUnitType(String valuationUnitType) {
         this.valuationUnitType = valuationUnitType;
     }
 }
