@@ -7,6 +7,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 
+import com.shenhesoft.driver.HttpURL;
 import com.shenhesoft.driver.R;
 import com.shenhesoft.driver.adapter.TitlePagerAdapter;
 import com.shenhesoft.driver.base.BaseActivity;
@@ -51,7 +52,6 @@ public class TaskActivity extends BaseActivity {
         viewPager.setOffscreenPageLimit(1);
         tab.setViewPager(viewPager);
         setTabsValue();//设置
-
     }
 
     @Override
